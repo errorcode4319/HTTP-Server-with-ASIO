@@ -1,19 +1,8 @@
 #ifndef __HTTP_SERVER_H
 #define __HTTP_SERVER_H
 
-#include<iostream>
-#include<thread>
-#include<cstdint>
-#include<utility>
-#include<functional>
-
-#ifdef _WIN32
-#define _WIN32_WINNT 0x0A00
-#endif 
-
-#include<boost/asio.hpp>
-#include<boost/asio/ts/buffer.hpp>
-#include<boost/asio/ts/internet.hpp>
+#include "net-headers.h"
+#include "http-request.h"
 
 namespace http {
 

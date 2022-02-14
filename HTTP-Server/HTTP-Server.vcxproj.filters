@@ -12,9 +12,18 @@
     <ClCompile Include="..\src\http-server.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\http-request.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\http-server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\http-request.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\net-headers.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

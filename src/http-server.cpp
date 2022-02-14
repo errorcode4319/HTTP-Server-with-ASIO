@@ -39,7 +39,8 @@ namespace http {
 			[this](std::error_code err, boost::asio::ip::tcp::socket sock) {
 				if (!err) {
 					std::cout << "Get Request => " << sock.remote_endpoint() << std::endl;
-					sock.close();
+					auto req = std::make_shared<HttpRequest>(mAsioCtx, std::move(sock));
+					req->load_request();
 				}
 				else {
 					std::cerr << "Accept New Client Failed => " << err.message() << std::endl;
