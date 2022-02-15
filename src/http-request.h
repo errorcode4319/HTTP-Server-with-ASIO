@@ -21,21 +21,23 @@ namespace http {
 		std::string_view getMethod() const { return mMethod; }
 
 		std::string_view getHeaderProp(std::string_view key) const {
-			if (auto iter = mHeaders.find(key.data()); iter != std::end(mHeaders)) {
+			if (auto iter = mHeader.find(key.data()); iter != std::end(mHeader)) {
 				return iter->second;
 			}
 			return "";
 		}
 
 		const auto& getHeaders() const {
-			return mHeaders;
+			return mHeader;
 		}
 
 	private:
+		bool	parseRequest(const std::string& raw);
+
 		std::string mTarget;
 		std::string mMethod;
 		std::unordered_map<std::string, std::string>	
-					mHeaders;
+					mHeader;
 		std::string mBody;
 
 	private:
