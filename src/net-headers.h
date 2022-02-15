@@ -5,7 +5,12 @@
 #include<thread>
 #include<cstdint>
 #include<utility>
+#include<queue>
+#include<vector>
+#include<mutex>
+#include<condition_variable>
 #include<functional>
+#include<unordered_map>
 
 #ifdef _WIN32
 #define _WIN32_WINNT 0x0A00

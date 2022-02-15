@@ -142,11 +142,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\http-request.cpp" />
+    <ClCompile Include="..\src\http-router.cpp" />
     <ClCompile Include="..\src\http-server.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\http-request.h" />
+    <ClInclude Include="..\src\http-router.h" />
     <ClInclude Include="..\src\http-server.h" />
     <ClInclude Include="..\src\net-headers.h" />
   </ItemGroup>

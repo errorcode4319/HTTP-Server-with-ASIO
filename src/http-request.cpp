@@ -20,15 +20,14 @@ namespace http {
 		buf.resize(MAX_REQ_LENGTH);
 		boost::system::error_code ec;
 		mSocket.read_some(boost::asio::buffer(buf.data(), buf.size()), ec);
-		std::cout << buf;
+		
 
 		if (!parseRequest(buf)) {
 			std::cerr << "Invalid HTTP Request" << std::endl;
 			return -1;
 		}
 
-		std::cout << "Target URL => " << mTarget << std::endl;
-		std::cout << "Target Method => " << mMethod << std::endl;
+		
 		return 0;
 	}
 

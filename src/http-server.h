@@ -3,6 +3,7 @@
 
 #include "net-headers.h"
 #include "http-request.h"
+#include "http-router.h"
 
 namespace http {
 
@@ -21,6 +22,7 @@ namespace http {
 		boost::asio::ip::tcp::acceptor	mAsioAcceptor;
 		std::thread						mThreadCtx;
 
+		HttpRouter						mRouter;
 	};
 
 }

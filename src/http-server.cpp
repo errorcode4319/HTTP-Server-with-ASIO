@@ -15,6 +15,7 @@ namespace http {
 
 	int HttpServer::start() {
 		try {
+			mRouter.start(16);
 			wait_request();
 			mThreadCtx = std::thread([&]() {mAsioCtx.run(); });
 			std::cout << "Server Started!" << std::endl;
@@ -40,7 +41,7 @@ namespace http {
 				if (!err) {
 					std::cout << "Get Request => " << sock.remote_endpoint() << std::endl;
 					auto req = std::make_shared<HttpRequest>(mAsioCtx, std::move(sock));
-					req->load_request();
+					mRouter.addRequest(req);
 				}
 				else {
 					std::cerr << "Accept New Client Failed => " << err.message() << std::endl;
